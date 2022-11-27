@@ -36,9 +36,9 @@ const initialAction = async() => {
                 'View Employees',
                 'View Departments',
                 'View Roles',
-                'Add Employees',
-                'Add Departments',
-                'Add Roles',
+                'Add Employee',
+                'Add Department',
+                'Add Role',
                 'Update Employee Role',
                 'Exit'
             ]
@@ -56,15 +56,15 @@ const initialAction = async() => {
                 roleView();
                 break;
 
-            case 'Add Employees':
+            case 'Add Employee':
                 employeeAdd();
                 break
 
-            case 'Add Departments':
+            case 'Add Department':
                 departmentAdd();
                 break
 
-            case 'Add Roles':
+            case 'Add Role':
                 roleAdd();
                 break
 
@@ -139,44 +139,28 @@ const roleView = async() => {
 // Selection to add a new employee
 const employeeAdd = async() => {
     try {
-        console.log('Employee Add');
-
-        let roles = await connection.query("SELECT * FROM role");
-
-        let managers = await connection.query("SELECT * FROM employee");
+        console.log('Add an Employee');
 
         let answer = await inquirer.prompt([
             {
                 name: 'firstName',
                 type: 'input',
-                message: 'What is the first name of this Employee?'
+                message: 'What is the first name of the employee?'
             },
             {
                 name: 'lastName',
                 type: 'input',
-                message: 'What is the last name of this Employee?'
+                message: 'What is the last name of the employee?'
             },
             {
                 name: 'employeeRoleId',
-                type: 'list',
-                choices: roles.map((role) => {
-                    return {
-                        name: role.title,
-                        value: role.id
-                    }
-                }),
-                message: "What is this Employee's role id?"
+                type: 'input',
+                message: "What is the employee's role ID?"
             },
             {
                 name: 'employeeManagerId',
-                type: 'list',
-                choices: managers.map((manager) => {
-                    return {
-                        name: manager.first_name + " " + manager.last_name,
-                        value: manager.id
-                    }
-                }),
-                message: "What is this Employee's Manager's Id?"
+                type: 'input',
+                message: "What is the employee's manager's ID?"
             }
         ])
 
@@ -187,7 +171,7 @@ const employeeAdd = async() => {
             manager_id: (answer.employeeManagerId)
         });
 
-        console.log(`${answer.firstName} ${answer.lastName} added successfully.\n`);
+        console.log(`${answer.firstName} ${answer.lastName} was added successfully.\n`);
         initialAction();
 
     } catch (err) {
@@ -205,7 +189,7 @@ const departmentAdd = async() => {
             {
                 name: 'deptName',
                 type: 'input',
-                message: 'What is the name of your new department?'
+                message: 'What is the name of the new department?'
             }
         ]);
 
@@ -213,7 +197,7 @@ const departmentAdd = async() => {
             department_name: answer.deptName
         });
 
-        console.log(`${answer.deptName} added successfully to departments.\n`)
+        console.log(`${answer.deptName} was added successfully to departments.\n`)
         initialAction();
 
     } catch (err) {
@@ -233,7 +217,7 @@ const roleAdd = async() => {
             {
                 name: 'title',
                 type: 'input',
-                message: 'What is the name of your new role?'
+                message: 'What is the name of the new role?'
             },
             {
                 name: 'salary',
