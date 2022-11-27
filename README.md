@@ -10,12 +10,12 @@ The user should clone the repository from GitHub and download Node and mysql2.
 
 Run the following commands in your terminal to make sure the application works correctly: 
 * `` mysql -u root -p ``
-* Enter your password
+* Enter your password for mysql
 * `` source db/schema.sql; ``
 * `` source db/seeds.sql; ``
 * `` exit ``
-* `` npm i `` to download the node modules to run this application.
-* `` node server.js `` to start the application. 
+* `` npm install `` or `` npm i `` to download the node modules to run this application.
+* `` node server.js `` or `` npm start `` to start the application. 
 
 ## Usage 
 * The user is presented with a list of options for what they would like to do first.
