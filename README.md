@@ -8,7 +8,7 @@ This project demonstrates the use of SQL.
 ## Installation 
 The user should clone the repository from GitHub and download Node and mysql2. 
 
-Run the following commands in your terminal to make sure the applications works correctly: 
+Run the following commands in your terminal to make sure the application works correctly: 
 * `` mysql -u root -p ``
 * Enter your password
 * `` source db/schema.sql; ``
