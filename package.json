@@ -1,0 +1,25 @@
+{
+  "name": "Employee-Tracker",
+  "version": "1.0.0",
+  "description": "An app that tracks employee information in a database.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeinabhared/Employee-Tracker.git"
+  },
+  "author": "Zeinab Hared",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeinabhared/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/zeinabhared/Employee-Tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^9.1.4",
+    "mysql2": "^2.3.3"
+  }
+}
