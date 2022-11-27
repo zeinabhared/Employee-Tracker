@@ -19,7 +19,9 @@
   "homepage": "https://github.com/zeinabhared/Employee-Tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "inquirer": "^9.1.4",
-    "mysql2": "^2.3.3"
+    "dotenv": "^16.0.3",
+    "inquirer": "8.2.4",
+    "mysql2": "^2.3.3",
+    "util": "^0.12.5"
   }
 }
